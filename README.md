@@ -4,12 +4,13 @@ Script de mise à jour d'une distribution exploitant APT en tant que gestionnair
 
 ## Détails
 
-- L'effet recherché est l'obtention d'un outil facile à déployer et à mettre en oeuvre afin de réaliser la montée de version des logiciels d'une façon standardisée ;
-- Le résultat de la derbnière exécution du script est enregistré dans le fichier "scr-apt-up.log" ;
+- La mise à jour de la distribution est envisagée comme globale et optimisée : les paquets obsolètes sont supprimés ;
+- L'effet recherché est l'obtention d'un outil facile à déployer et à mettre en œuvre afin de réaliser la montée de version des logiciels d'une façon standardisée ;
+- Le résultat de la dernière exécution du script est enregistré dans le fichier **scr-apt-up.log** ;
 
 ## Précisions
 
-Les script éxecute de manière séquentielle les commandes suivantes :
+Le script exécute de manière séquentielle les commandes suivantes :
 
 ```
 sudo apt-get update
@@ -26,13 +27,13 @@ Mise à jour de tous les paquets installés vers les dernières versions en inst
 ```
 sudo apt-get autoremove -y
 ```
-Suppression des paquets ainsi que leurs dépendances devenus inutiles. Les fichiers de configuration de ces paquets sont toutefoois conservés.
+Suppression des paquets ainsi que leurs dépendances devenus inutiles. Les fichiers de configuration de ces paquets sont toutefois conservés.
 
 ```
 sudo apt-get autoclean
 ```
 
-Suppression des paquets obsoletes du dossier /var/cache/apt/archives.
+Suppression des paquets obsolètes du dossier /var/cache/apt/archives.
 
 ```
 sudo apt-get clean
