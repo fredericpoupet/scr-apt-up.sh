@@ -51,7 +51,7 @@ __________
 
 - [X] Détermination des informations du système d'après le fichier **/etc/os-release** afin de maximiser la compatibilité ;
 - [X] Comparaison, à la fin de l'exécution du script, des versions initiales et finales du système. Cette fonction est compatible avec les langues française et anglaise ;
-- [X] Indication, à la fin de l'exécution du script, des modifications apportées au système par les commandes **sudo apt-get upgrade -Vy** et **sudo apt-get dist-upgrade -Vy**. Les indications des modifications apportées au système par la commande **sudo apt-get autoremove -y** sont ignorées.
+- [X] Indication, à la fin de l'exécution du script, des modifications apportées au système par les commandes **sudo apt-get upgrade -Vy** et **sudo apt-get dist-upgrade -Vy**. Les indications relatives aux modifications apportées au système par la commande **sudo apt-get autoremove -y** sont ignorées.
 
 29/09/2023
 __________
