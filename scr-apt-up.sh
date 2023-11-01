@@ -266,7 +266,7 @@ if [ "$?" == 0 ];
 
             then
 
-                resume_3=$(cat scr-apt-up.log | grep "Apr.s cette op.ration")
+                resume_3=$(cat scr-apt-up.log | grep -m1 "Apr.s cette op.ration")
 
             else
 
@@ -276,7 +276,7 @@ if [ "$?" == 0 ];
 
 	else
 
-        resume_1=$(cat scr-apt-up.log | grep "newly installed")
+        resume_1=$(cat scr-apt-up.log | grep -m1 "newly installed")
 
         cat scr-apt-up.log | grep "Need to get" > /dev/null
 
@@ -298,7 +298,7 @@ if [ "$?" == 0 ];
 
             then
 
-                resume_3=$(cat scr-apt-up.log | grep "After this operation")
+                resume_3=$(cat scr-apt-up.log | grep -m1 "After this operation")
 
             else
 
