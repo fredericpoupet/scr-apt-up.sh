@@ -50,7 +50,7 @@ Suppression de tous les paquets du dossier /var/cache/apt/archives.
 __________
 
 - [X] Détermination des informations du système d'après le fichier **/etc/os-release** afin de maximiser la compatibilité ;
-- [X] Comparaison, à la fin de l'exécution du script, des versions initiales et finales du système. Cette fonction est compatible avec les langues françaises et anglaises ;
+- [X] Comparaison, à la fin de l'exécution du script, des versions initiales et finales du système. Cette fonction est compatible avec les langues française et anglaise ;
 - [X] Indication, à la fin de l'exécution du script, des modifications apportées au système.
 
 29/09/2023
