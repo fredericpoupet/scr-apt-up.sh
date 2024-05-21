@@ -1,71 +1,71 @@
 # scr-apt-up.sh
 
-Script de mise à jour d'une distribution Linux exploitant APT en tant que gestionnaire de paquets.
+Script to update a Linux distribution using APT as a package manager.
 
-## Détails
+## Details
 
-- L'effet recherché est l'obtention d'un outil facile à déployer et à mettre en œuvre afin de réaliser la montée de version des logiciels d'une façon standardisée ;
-- Le résultat de la dernière exécution du script est enregistré dans le fichier **scr-apt-up.log** ;
-- Le caractère "*" préfixant certains résultats précise qu'ils sont obtenus par calcul et non par lecture directe.
+- The desired effect is to obtain a tool that is easy to deploy and implement, in order to perform software version upgrades in a standardized way;
+- The result of the last script execution is recorded in the **scr-apt-up.log** file;
+- The "*" character prefixing certain results indicates that they are obtained by calculation and not by direct reading.
 
-## Précisions
+## Details
 
-Le script exécute de manière selective, selon l'environnement déclaré, les commandes suivantes :
+The script selectively executes the following commands, depending on the declared environment:
 
 ```
 [PRODUCTION|TEST] sudo apt-get update
 ```
 
-Mise à jour de la liste des fichiers dans les dépôts APT du fichier /etc/apt/sources.list.
+Update the list of files in APT repositories in /etc/apt/sources.list.
 
 ```
 [PRODUCTION] sudo apt-get upgrade -Vy
 ```
 
-Mise à jour de tous les paquets installés vers les dernières versions sans installer de nouveaux paquets.
+Update all installed packages to the latest versions without installing new packages.
 
 ```
 [TEST] sudo apt-get dist-upgrade -Vy
 ```
 
-Mise à jour de tous les paquets installés vers les dernières versions en installant de nouveaux paquets si nécessaire.
+Update all installed packages to the latest versions, installing new packages if necessary.
 
 ```
 [TEST] sudo apt-get autoremove -y
 ```
-Suppression des paquets ainsi que leurs dépendances devenus inutiles. Les fichiers de configuration de ces paquets sont toutefois conservés.
+Removal of packages and their dependencies that are no longer needed. However, the configuration files for these packages are retained.
 
 ```
 [TEST] sudo apt-get clean
 ```
-Suppression de tous les paquets du dossier /var/cache/apt/archives.
+Remove all packages from /var/cache/apt/archives.
 
-## Révisions attendues
+## Expected revisions
 
 ...
 
-## Révisions réalisées
+## Revisions achieved
 
 01/11/2023
 __________
 
-- [X] Détermination des informations du système d'après le fichier **/etc/os-release** afin de maximiser la compatibilité ;
-- [X] Comparaison, à la fin de l'exécution du script, des versions initiales et finales du système. Cette fonction est compatible avec les langues française et anglaise ;
-- [X] Indication, à la fin de l'exécution du script, des modifications apportées au système par les commandes **sudo apt-get upgrade -Vy** et **sudo apt-get dist-upgrade -Vy**. Les indications relatives aux modifications apportées au système par la commande **sudo apt-get autoremove -y** sont ignorées.
+- [X] Determination of system information from **/etc/os-release** file to maximize compatibility;
+- [X] Comparison, at the end of script execution, of initial and final system versions. This function is compatible with English and French;
+- [X] Indication, at the end of script execution, of changes made to the system by the **sudo apt-get upgrade -Vy** and **sudo apt-get dist-upgrade -Vy** commands. Indications of changes made to the system by the **sudo apt-get autoremove -y** command are ignored.
 
 29/09/2023
 __________
 
-- [X] Différentiation des commandes en fonction de l'environnement d'exécution **PRODUCTION** ou **TEST** déclaré ;
-- [X] Indication de la date de la dernière mise à jour du système ainsi que de l'intervalle de temps depuis cette date.
+- [X] Differentiation of commands according to the **PRODUCTION** or **TEST** execution environment declared;
+- [X] Indication of the date of the last system update and the time interval since that date.
 
 25/08/2023
 __________
     
-- [X] Suppression de la commande **sudo apt-get autoclean**, redondante avec la commande **sudo apt-get clean** ;
-- [X] Intégration de l'horodatage et de la duré de l'exécution du script.
+- [X] Removal of **sudo apt-get autoclean** command, redundant with **sudo apt-get clean** command;
+- [X] Integration of timestamp and script execution time.
 
-## Exemple de résultat
+## Example of result
 
 ```
 ----------------------------------------------------------------------------------
